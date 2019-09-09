@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>QnA</title>
+  </head>
+  <body>
+    <h1>Hey Everyone! Welcome to QnA section</h1>
+    <form class="" action="/question" method="post">
+      <button type="submit" name="submitQuestion">Ask Question</button>
+      <br>
+    </form>
+    <% var j=0; %>
+    <% for(var i=0;i<questions.length;i++){ %>
+    <h1><%= questions[i].questionData  %></h1>
+    <form action="/answer" method="post">
+      <button type="submit" name="button" value= "<%= i %>">Answer</button>
+      <br>
+    </form>
+    <% for(var j=0; j<questions[i].answerDataS.length ;j++){ %>
+      <h3><%= questions[i].answerDataS[j]  %></h3>
+      <% } %>
+      <% } %>
+  </body>
+</html>
